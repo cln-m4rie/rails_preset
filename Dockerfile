@@ -13,5 +13,6 @@ COPY . /app
 
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
+RUN echo 'export PS1="\n\[\033[35m\]\u@\h\[\033[00m\]:\[\033[36m\]\w\[\033[00m\]\n[app] \$ "' >> /root/.bashrc
 ENTRYPOINT ["entrypoint.sh"]
 EXPOSE 3000
